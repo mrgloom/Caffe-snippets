@@ -1,0 +1,94 @@
+#Need to try to reproduce results on fresh ubuntu VM
+#v1 like here and v2 using pip for all python modules
+
+#Note we can add "-y" to all "apt-get" commands to do 'silent' install.
+
+#install git
+sudo apt-get install git
+
+cd ~\Downloads
+#clone caffe master
+git clone https://github.com/BVLC/caffe.git
+
+#install g++
+sudo apt-get install g++
+
+#(Optional)install eclipse with c++ support
+sudo apt-get install eclipse eclipse-cdt
+
+#install protobuf
+sudo apt-get install libprotobuf-dev
+sudo apt-get install protobuf-compiler
+
+#install boost
+sudo apt-get install --no-install-recommends libboost-all-dev
+
+#install gflags
+sudo apt-get install libgflags-dev
+
+#install glog
+sudo apt-get install libgoogle-glog-dev
+
+#install blas (atlas)
+sudo apt-get install libatlas-base-dev
+
+#install opencv
+sudo apt-get install libopencv-dev
+
+#install hdf5
+sudo apt-get install libhdf5-serial-dev
+
+#install leveldb
+sudo apt-get install libleveldb-dev
+
+#install lmdb
+sudo apt-get install liblmdb-dev
+
+#install snappy
+sudo apt-get install libsnappy-dev
+
+#For python support:
+
+#install python-dev for python headers
+sudo apt-get install python-dev
+
+#install pip
+#sudo apt-get install python-pip
+
+#install numpy  {We miss some headers?}
+#sudo pip install numpy
+
+#install numpy without pip?
+sudo apt-get install python-numpy
+
+#install scikit-image
+#sudo pip install scikit-image (needs Cython)
+sudo apt-get install python-skimage
+
+#{ImportError: No module named google.protobuf.internal}
+#{something goes wrong - need to test it on clean VM.}
+#need to install protobuf for python?
+#install protobuf
+sudo pip install protobuf
+
+#at the end we have warnings
+/home/user/Downloads/caffe/python/caffe/pycaffe.py:13: RuntimeWarning: to-Python converter for boost::shared_ptr<caffe::Net<float> > already registered; second conversion method ignored.
+  from ._caffe import Net, SGDSolver, NesterovSolver, AdaGradSolver, \
+/home/user/Downloads/caffe/python/caffe/pycaffe.py:13: RuntimeWarning: to-Python converter for boost::shared_ptr<caffe::Blob<float> > already registered; second conversion method ignored.
+  from ._caffe import Net, SGDSolver, NesterovSolver, AdaGradSolver, \
+/home/user/Downloads/caffe/python/caffe/pycaffe.py:13: RuntimeWarning: to-Python converter for boost::shared_ptr<caffe::Solver<float> > already registered; second conversion method ignored.
+  from ._caffe import Net, SGDSolver, NesterovSolver, AdaGradSolver, \
+
+
+cd /home/user/Downloads/caffe
+cp Makefile.config.example Makefile.config
+
+edit Makefile.config
+
+make
+
+make pycaffe
+
+
+
+
