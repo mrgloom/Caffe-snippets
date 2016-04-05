@@ -31,6 +31,10 @@ sudo apt-get install libgoogle-glog-dev
 
 #install blas (atlas)
 sudo apt-get install libatlas-base-dev
+#(Option) install openblas  TODO: need to be tested!
+#Is it what we need? libopenblas-base is just binaries?
+#How to check if we build with atlas or openblas, are they interchangeble? update-alternatives?
+sudo apt-get install libopenblas-dev
 
 #install opencv
 sudo apt-get install libopencv-dev
@@ -86,8 +90,6 @@ cp Makefile.config.example Makefile.config
 edit Makefile.config
 
 make
-
-make pycaffe
 
 
 
