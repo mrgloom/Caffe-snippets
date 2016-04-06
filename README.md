@@ -1,2 +1,2 @@
 # Caffe-snippets
-Caffe .prototxt, logs, code snippets for pursonal usage only, nothing intersting.
+Caffe .prototxt, logs, code snippets for personal usage only, nothing intersting.
