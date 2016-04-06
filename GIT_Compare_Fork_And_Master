@@ -1,0 +1,21 @@
+# Clone main repository
+git clone https://github.com/BVLC/caffe.git
+cd caffe
+
+# (Optional) Get list of branches
+git branch -l
+
+# Add remote
+git remote add caffe_MS https://github.com/Microsoft/caffe.git
+
+# (Optional) Get list of remote branches
+git branch -r
+
+# Fetch remote branches from fork
+git fetch caffe_MS
+
+# Show only names of changed files
+git diff --name-only origin/master caffe_MS/master
+
+# Compare single file
+git diff origin/master caffe_MS/master my_file_name 
