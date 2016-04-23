@@ -41,7 +41,7 @@ git clone https://github.com/BVLC/caffe.git
 
 cd caffe
 
-
+wget https://raw.githubusercontent.com/mrgloom/Caffe-snippets/master/Makefile.config
 
 make -j4
 make -j4 test
